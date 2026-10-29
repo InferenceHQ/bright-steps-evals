@@ -1,0 +1,35 @@
+{
+  "name": "family-reading-tutor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && tsx scripts/build-service-worker.ts",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:domain": "vitest run src/domain.test.ts",
+    "verify:preflight": "npm run check && npm run test:domain",
+    "verify:diagnostic": "vitest run",
+    "verify:journey": "tsx scripts/verify-journey.ts",
+    "verify:privacy": "vitest run src/privacy.test.ts",
+    "verify:release": "npm run verify:preflight && npm run verify:diagnostic && npm run verify:privacy",
+    "eval:scorecard": "tsx evals/run.ts"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.7.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "jsdom": "^26.1.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6",
+    "vitest": "^3.1.1"
+  }
+}

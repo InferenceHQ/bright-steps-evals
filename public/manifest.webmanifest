@@ -1,0 +1,9 @@
+{
+  "name": "Bright Steps Reading",
+  "short_name": "Bright Steps",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf1",
+  "theme_color": "#5d48d7",
+  "icons": []
+}
